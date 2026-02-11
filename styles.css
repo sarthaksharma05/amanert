@@ -1,0 +1,120 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --muted: #b4b4b4;
+  --text: #f5f5f5;
+  --accent: #ffffff;
+  --accent-2: #d9d9d9;
+  --danger: #ff5c7a;
+  --success: #40c589;
+}
+* { box-sizing: border-box }
+html, body {
+  height: 100%;
+  background: radial-gradient(1200px 800px at 70% -20%, rgba(255,255,255,0.06), transparent), var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.app { max-width: 1100px; margin: 0 auto; padding: 0 20px }
+.header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; backdrop-filter: blur(6px);
+}
+.logo {
+  font-weight: 700; letter-spacing: 0.2px; font-size: 20px;
+}
+.accent { color: var(--accent) }
+.nav a {
+  color: var(--muted); margin-left: 16px; text-decoration: none; font-weight: 500;
+}
+.nav a:hover { color: var(--text) }
+.progress-wrap { margin: 10px 0 20px }
+.progress-label { font-size: 12px; color: var(--muted); margin-bottom: 6px }
+.progress {
+  height: 8px; background: #141414; border-radius: 999px; overflow: hidden; box-shadow: inset 0 0 0 1px #2a2a2a;
+}
+.progress-bar {
+  height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  transition: width 400ms ease;
+}
+.hero {
+  position: relative; border-radius: 18px; overflow: hidden; padding: 60px 24px; background: linear-gradient(180deg, rgba(18,18,18,0.9), rgba(18,18,18,0.65));
+  border: 1px solid #2a2a2a;
+}
+.hero-content { text-align: center; max-width: 760px; margin: 0 auto }
+.hero h1 { font-size: 42px; margin: 0 0 12px }
+.hero p { color: var(--muted); font-size: 18px; margin: 0 0 24px }
+.hero-glow {
+  position: absolute; inset: -40% -10% auto auto; width: 60%; height: 100%;
+  background: radial-gradient(600px 400px at 10% 20%, rgba(255,255,255,0.15), transparent);
+  filter: blur(40px); pointer-events: none;
+}
+.section { margin: 36px 0; padding: 28px; background: rgba(18,18,18,0.5); border: 1px solid #2a2a2a; border-radius: 18px }
+.section-head h2 { margin: 0 0 6px; font-size: 24px }
+.section-head p { margin: 0; color: var(--muted) }
+.cards { display: grid; grid-template-columns: 1fr; gap: 16px }
+.card { background: var(--surface); border: 1px solid #2a2a2a; border-radius: 16px; padding: 14px }
+.media img, .media video { width: 100%; border-radius: 12px }
+.vote { display: flex; gap: 10px; margin-top: 10px }
+.reveal { margin-top: 12px; display: none }
+.reveal .result { font-weight: 600 }
+.reveal .explain { color: var(--muted); margin-top: 6px }
+.reveal .stat { color: var(--muted); font-size: 12px; margin-top: 6px }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px }
+.tile { background: var(--surface); border: 1px solid #1b2442; border-radius: 14px; padding: 14px }
+.survey { margin-top: 16px; display: grid; gap: 16px }
+.control label { display: block; margin-bottom: 8px; font-weight: 500 }
+.slider-group { background: #141414; padding: 12px; border-radius: 12px; border: 1px solid #2a2a2a }
+.slider-group input[type="range"] { width: 100% }
+.slider-labels, .slider-scale { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: 6px }
+.choices { display: flex; gap: 10px; flex-wrap: wrap }
+.chip {
+  background: #141414; color: var(--text); border: 1px solid #2a2a2a; border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: all 220ms ease;
+}
+.chip.active { background: rgba(255,255,255,0.12); border-color: var(--accent); box-shadow: 0 0 20px rgba(255,255,255,0.25) inset, 0 0 10px rgba(255,255,255,0.15) }
+.btn {
+  appearance: none; border: none; border-radius: 12px; padding: 12px 20px; cursor: pointer; font-weight: 600; letter-spacing: 0.2px; font-size: 16px;
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #0a0a0a;
+  box-shadow: 0 6px 20px rgba(255,255,255,0.25);
+}
+.btn.outline {
+  background: transparent; color: var(--text); border: 1px solid #3a3a3a;
+}
+.btn:hover { transform: translateY(-1px) }
+.demo { margin-top: 16px; display: grid; grid-template-columns: 1fr; gap: 16px }
+.upload { display: flex; gap: 10px; align-items: center }
+.scan-visual { position: relative; height: 120px; background: #141414; border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden }
+.scan-pulse { position: absolute; inset: 0; background: radial-gradient(400px 200px at 10% 10%, rgba(255,255,255,0.06), transparent) }
+.scan-progress { height: 10px; border-radius: 999px; background: #141414; border: 1px solid #2a2a2a; margin-top: 8px; overflow: hidden }
+.scan-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 180ms ease }
+.scan-result { margin-top: 8px }
+.score { font-weight: 700; font-size: 18px }
+.roles { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px }
+.b2b.hidden { display: none }
+.section-sub h3 { margin: 0 0 10px }
+.form { margin-top: 12px; display: grid; gap: 10px }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+.form input, .form select {
+  width: 100%; padding: 10px 12px; border-radius: 10px; background: #141414; color: var(--text); border: 1px solid #2a2a2a;
+}
+.insights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px }
+.insight { background: var(--surface); border: 1px solid #1b2442; border-radius: 14px; padding: 12px }
+.insight-title { color: var(--muted); font-size: 13px }
+.insight-value { font-size: 16px; font-weight: 600; margin-top: 6px }
+.profile-card { background: var(--surface); border: 1px solid #1b2442; border-radius: 14px; padding: 16px; min-height: 80px }
+.actions { margin-top: 12px }
+.footer { margin: 30px 0; color: var(--muted); text-align: center }
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr 1fr }
+  .insights { grid-template-columns: 1fr 1fr }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 32px }
+  .grid { grid-template-columns: 1fr }
+  .form-row { grid-template-columns: 1fr }
+  .insights { grid-template-columns: 1fr }
+}

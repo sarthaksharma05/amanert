@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Truth AI — Deepfake Awareness & Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">Truth<span class="accent">AI</span></div>
+      <nav class="nav">
+        <a href="#test">Test</a>
+        <a href="#awareness">Awareness</a>
+        <a href="#impact">Impact</a>
+        <a href="#role">Role</a>
+        <a href="#signup">Early Access</a>
+      </nav>
+    </header>
+
+    <div class="progress-wrap">
+      <div class="progress-label">Journey Progress</div>
+      <div class="progress">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </div>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Can You Spot the Fake?</h1>
+        <p>Deepfake videos and images are rising in India. Are you protected?</p>
+        <button id="ctaStart" class="btn primary">Test Yourself</button>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="section" id="test">
+      <div class="section-head">
+        <h2>Interactive Deepfake Test</h2>
+        <p>Vote Real or Fake. Reveal the truth with context.</p>
+      </div>
+      <div class="cards">
+        <div class="card" data-item="0">
+          <div class="media">
+            <img src="./mainpic.jpeg" alt="Example 1">
+          </div>
+          <div class="vote">
+            <button class="btn outline vote-real">Real</button>
+            <button class="btn outline vote-fake">Fake</button>
+          </div>
+          <div class="reveal">
+            <div class="result"></div>
+            <div class="explain"></div>
+            <div class="stat"></div>
+          </div>
+        </div>
+        <div class="card" data-item="1">
+          <div class="media">
+            <video src="./mainn2video.mp4" controls></video>
+          </div>
+          <div class="vote">
+            <button class="btn outline vote-real">Real</button>
+            <button class="btn outline vote-fake">Fake</button>
+          </div>
+          <div class="reveal">
+            <div class="result"></div>
+            <div class="explain"></div>
+            <div class="stat"></div>
+          </div>
+        </div>
+        <div class="card" data-item="2">
+          <div class="media">
+            <img src="./main2pic.jpeg" alt="Example 3">
+          </div>
+          <div class="vote">
+            <button class="btn outline vote-real">Real</button>
+            <button class="btn outline vote-fake">Fake</button>
+          </div>
+          <div class="reveal">
+            <div class="result"></div>
+            <div class="explain"></div>
+            <div class="stat"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awareness">
+      <div class="section-head">
+        <h2>Awareness</h2>
+        <p>Recent misuse examples and your perspective.</p>
+      </div>
+      <div class="grid">
+        <div class="tile">
+          <h3>Celebrity Impersonation</h3>
+          <p>Fake endorsements and scam videos circulate widely.</p>
+        </div>
+        <div class="tile">
+          <h3>Political Manipulation</h3>
+          <p>Altered speeches and misinformation campaigns.</p>
+        </div>
+        <div class="tile">
+          <h3>Financial Scam</h3>
+          <p>Fraudulent messages using AI-generated voices.</p>
+        </div>
+      </div>
+      <div class="survey">
+        <div class="control">
+          <label>Have you encountered deepfake content?</label>
+          <div class="slider-group">
+            <input id="encounterSlider" type="range" min="0" max="5" step="1" value="0">
+            <div class="slider-labels">
+              <span>Never</span><span>Rarely</span><span>Sometimes</span><span>Often</span><span>Very Often</span><span>Constantly</span>
+            </div>
+          </div>
+        </div>
+        <div class="control">
+          <label>How concerned are you about deepfake misuse?</label>
+          <div class="slider-group">
+            <input id="concernSlider" type="range" min="1" max="10" step="1" value="5">
+            <div class="slider-scale">
+              <span>1</span><span>3</span><span>5</span><span>7</span><span>10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="section-head">
+        <h2>Problem Impact</h2>
+        <p>Your exposure and intent to act.</p>
+      </div>
+      <div class="survey">
+        <div class="control">
+          <label>If a fake video of you went viral, how damaging would it be?</label>
+          <div class="slider-group">
+            <input id="damageSlider" type="range" min="1" max="10" step="1" value="5">
+            <div class="slider-scale">
+              <span>1</span><span>3</span><span>5</span><span>7</span><span>10</span>
+            </div>
+          </div>
+        </div>
+        <div class="control">
+          <label>Would you use a tool that verifies content before sharing?</label>
+          <div class="choices">
+            <button class="chip" data-choice="use-yes">Yes</button>
+            <button class="chip" data-choice="use-no">No</button>
+          </div>
+        </div>
+        <div class="control">
+          <label>Would you pay ₹99/month for unlimited scans?</label>
+          <div class="choices">
+            <button class="chip" data-choice="pay-yes">Yes</button>
+            <button class="chip" data-choice="pay-no">No</button>
+            <button class="chip" data-choice="pay-maybe">Maybe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="role">
+      <div class="section-head">
+        <h2>Who Are You?</h2>
+      </div>
+      <div class="roles">
+        <button class="chip role" data-role="Student">Student</button>
+        <button class="chip role" data-role="Professional">Professional</button>
+        <button class="chip role" data-role="Business Owner">Business Owner</button>
+        <button class="chip role" data-role="Media Professional">Media Professional</button>
+        <button class="chip role" data-role="Government">Government</button>
+      </div>
+      <div id="b2b" class="b2b hidden">
+        <div class="section-sub">
+          <h3>For Businesses</h3>
+        </div>
+        <div class="survey">
+          <div class="control">
+            <label>Does your company verify digital content?</label>
+            <div class="choices">
+              <button class="chip" data-b2b="verify-yes">Yes</button>
+              <button class="chip" data-b2b="verify-no">No</button>
+            </div>
+          </div>
+          <div class="control">
+            <label>Have you faced misinformation damage?</label>
+            <div class="choices">
+              <button class="chip" data-b2b="damage-yes">Yes</button>
+              <button class="chip" data-b2b="damage-no">No</button>
+            </div>
+          </div>
+          <div class="control">
+            <label>Would you pay for enterprise API access?</label>
+            <div class="choices">
+              <button class="chip" data-b2b="api-yes">Yes</button>
+              <button class="chip" data-b2b="api-no">No</button>
+            </div>
+          </div>
+          <div class="control">
+            <label>Company size</label>
+            <div class="choices">
+              <button class="chip" data-b2b="size-1-10">1–10</button>
+              <button class="chip" data-b2b="size-11-50">11–50</button>
+              <button class="chip" data-b2b="size-51-200">51–200</button>
+              <button class="chip" data-b2b="size-200-plus">200+</button>
+            </div>
+          </div>
+          <div class="control">
+            <label>Want a demo call?</label>
+            <div class="choices">
+              <button class="chip" data-b2b="demo-yes">Yes</button>
+              <button class="chip" data-b2b="demo-no">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="signup">
+      <div class="section-head">
+        <h2>Get Early Access</h2>
+        <p>Protect your digital identity.</p>
+      </div>
+      <form id="signupForm" class="form">
+        <div class="form-row">
+          <input id="nameInput" type="text" placeholder="Name" required>
+          <input id="emailInput" type="email" placeholder="Email" required>
+        </div>
+        <div class="form-row">
+          <select id="roleSelect" required>
+            <option value="">Select Role</option>
+            <option>Student</option>
+            <option>Professional</option>
+            <option>Business Owner</option>
+            <option>Media Professional</option>
+            <option>Government</option>
+          </select>
+        </div>
+        <button class="btn primary" type="submit">Join Waitlist</button>
+      </form>
+    </section>
+
+    <section class="section" id="analytics">
+      <div class="section-head">
+        <h2>Insights</h2>
+        <p>Aggregated signals from your journey.</p>
+      </div>
+      <div class="insights">
+        <div class="insight">
+          <div class="insight-title">Real vs Fake Accuracy</div>
+          <div id="accuracyMetric" class="insight-value"></div>
+        </div>
+        <div class="insight">
+          <div class="insight-title">Concern Level</div>
+          <div id="concernMetric" class="insight-value"></div>
+        </div>
+        <div class="insight">
+          <div class="insight-title">Willingness to Pay</div>
+          <div id="payMetric" class="insight-value"></div>
+        </div>
+        <div class="insight">
+          <div class="insight-title">Role</div>
+          <div id="roleMetric" class="insight-value"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profile">
+      <div class="section-head">
+        <h2>Your Digital Risk Profile</h2>
+      </div>
+      <div id="riskProfile" class="profile-card"></div>
+      <div class="actions">
+        <button id="downloadJson" class="btn outline">Download Answers JSON</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© Truth AI • Verify before you amplify</div>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
